@@ -1,1 +1,4 @@
 pycache/
+tiftool.egg-info/
+dist/
+build/
