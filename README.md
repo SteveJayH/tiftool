@@ -12,7 +12,7 @@ tiftool can installed via pip. Simply run this code by terminal.
 ```
 pip install tiftool
 ```
-Latest version is **0.1.4**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
+Latest version is **0.1.5**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
 ```
 pip install tiftool -U
 ```
