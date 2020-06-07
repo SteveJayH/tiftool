@@ -84,9 +84,9 @@ class Stack:
         
         tmp.fill_(self._data.max())
 
-        tmp[0:self._data.size(0), 0:self._data.size(1), :] = mip_z(self)
-        tmp[0:self._data.size(0), self._data.size(1)+padding:tmp.size(1), :] = tile(mip_x(self).squeeze(2), 1, z_exp).unsqueeze(2)
-        tmp[self._data.size(0)+padding:tmp.size(0), 0:self._data.size(1), :] = tile(mip_y(self).squeeze(2), 0, z_exp).unsqueeze(2)
+        tmp[0:self._data.size(0), 0:self._data.size(1), :] = mip_z(self).data()
+        tmp[0:self._data.size(0), self._data.size(1)+padding:tmp.size(1), :] = tile(mip_x(self).data().squeeze(2), 1, z_exp).unsqueeze(2)
+        tmp[self._data.size(0)+padding:tmp.size(0), 0:self._data.size(1), :] = tile(mip_y(self).data().squeeze(2), 0, z_exp).unsqueeze(2)
         
         new.data_(tmp)
         
@@ -121,7 +121,7 @@ class Stack:
             assert self._data.ndim == 3, "Check dimension of stack, need to be 3"
             thickness = self._data.shape[2]
             if thickness == 1:
-                plt.imshow(self._data.squeeze(2), cmap='gray')
+                plt.imshow(self._data.squeeze(2).T, cmap='gray')
                 plt.show()
             else:
                 fig, ax = plt.subplots(1, 1)

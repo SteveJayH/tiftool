@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'tiftool',
-    version = '0.1.1',
+    version = '0.1.3',
     description = 'tiftool',
     author = 'Seungjae',
     author_email = 'jay0118@yonsei.ac.kr',
