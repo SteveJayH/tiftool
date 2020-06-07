@@ -1,6 +1,6 @@
 tiftool.egg-info/
 tiftool/__pycache__/
-tiftool/tiftool/__pycache__/
-tiftool/tiftool/sub_classes/__pycache__/
+tiftool/__pycache__/
+tiftool/sub_classes/__pycache__/
 dist/
 build/
