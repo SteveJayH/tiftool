@@ -34,4 +34,10 @@ MIP.write("mip_larva.tif")  # write at your input path
 ```
 See [tiftool docs](https://github.com/SteveJayH/tiftool/) for more details.  (**Not constructed**)
 
+## Issues & Contribution
+
+I appreciate for all [issues](https://github.com/SteveJayH/tiftool/issues) and contributions. You can use 'issues' tab, 'Pull request' tab, or [e-mail](mailto:jay0118@yonsei.ac.kr) me! I want to develop this package as a **powerful toolkit for microscopy data researcher** and if you mind, contribute with me! :smiley:
+
 ## LICENSE
+
+This package follows MIT LICENSE.
