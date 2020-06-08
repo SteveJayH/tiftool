@@ -3,6 +3,7 @@ import numpy as np
 import torch
 from PIL import Image
 from tifffile import imwrite
+import matplotlib.pyplot as plt
 from .functional import mip_x, mip_y, mip_z
 from .sub_classes.IndexTracker import IndexTracker
 

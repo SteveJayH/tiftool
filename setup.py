@@ -1,9 +1,14 @@
 from setuptools import setup, find_packages
 
+with open('README.md') as f:
+    long_description = f.read()
+
 setup(
     name = 'tiftool',
-    version = '0.1.4',
+    version = '0.1.6',
     description = 'tiftool',
+    long_description = long_description,
+    long_description_content_type = 'text/markdown',
     author = 'Seungjae',
     author_email = 'jay0118@yonsei.ac.kr',
     url = 'https://github.com/SteveJayH/tiftool',
