@@ -28,7 +28,7 @@ larva = st.Stack().open("larva.tif").to_tensor()  # Change to torch.tensor, defa
 raw_data = larva._data  # You can access the raw data inside Stack() object.
 print(raw_data.size())  # torch.size([1098, 890, 64]) (x, y, z)
 
-MIP = a.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
+MIP = larva.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
 MIP.show()  # Show image using matplotlib
 MIP.write("mip_larva.tif")  # write at your input path
 ```
