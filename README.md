@@ -4,6 +4,16 @@
 
 The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.07.**
 
+## Concept
+
+### Stack object
+
+Main concept of tiftool is **Stack object**. This object carries your 3d data from .tif file as 'torch.Tensor' or 'numpy.ndarray'. By using stack object, you can conduct numerous processes; MIP(Maximum Intensity Projection), Find center z-plane, etc. This package is made to help research, Fluorescent Microscopy(WideField, XLFM(eXtended field of view LFM), etc).
+
+### HyperStack object
+
+**Under construction** Similar as ImageJ, I'll make HyperStack object which can consider 'time'. It will contain 4-D data, (T, X, Y, Z).
+
 ## Installation
 
 ### pip
