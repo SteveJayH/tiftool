@@ -2,7 +2,7 @@
 
 <h2 align="center">tiftool: A Python package for Microscopy tif images</h2>
 
-The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.07.**
+The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.08.**
 
 ## Concept
 
