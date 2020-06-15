@@ -96,6 +96,28 @@ class Stack:
         
         return new
     
+    def xlfm_encoding(self, impulses, x_l, y_l, z_l):
+        new = copy.deepcopy(self)
+        flag = False
+        if isinstance(self._data, np.ndarray):
+            flag = True
+            self.to_tensor_()
+        
+        tmp = torch.zeros(x_l, y_l, z_l)
+        q = 0
+
+        for i in range(impulses.data().size(0)):
+            for j in range(impulses.data().size(1)):
+                if impulses.data()[i, j, 0] != 0:
+                    tmp[:, :, q] = self.data()[i-x_l//2:i+(x_l-x_l//2), j-y_l//2:j+(y_l-y_l//2), 0]
+                    q += 1
+        new.data_ = tmp
+
+        if flag:
+            new.to_numpy_()
+
+        return new
+
     def write(self, path):
         if isinstance(self._data, torch.Tensor):
             imwrite(path, self._data.permute(2, 1, 0).cpu().numpy(), dtype='f2')
