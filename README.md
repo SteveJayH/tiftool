@@ -13,6 +13,8 @@ The package for dealing tif stack image. Oriented for Microscopy image, offering
 
 ## Concept
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3fb8268c6074ad7ae70cd3478ad04c3)](https://app.codacy.com/manual/jay0118/tiftool?utm_source=github.com&utm_medium=referral&utm_content=SteveJayH/tiftool&utm_campaign=Badge_Grade_Dashboard)
+
 ### Stack object
 
 Main concept of tiftool is **Stack object**. This object carries your 3d data from .tif file as 'torch.Tensor' or 'numpy.ndarray'. By using stack object, you can conduct numerous processes; MIP(Maximum Intensity Projection), Find center z-plane, etc. This package is made to help research, Fluorescent Microscopy(WideField, XLFM(eXtended field of view LFM), etc).
