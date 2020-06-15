@@ -10,22 +10,32 @@ from .sub_classes.IndexTracker import IndexTracker
 
 class Stack:
     def __init__(self):
+        """self._data will contain data.
+        Stack object works as "Rocket". 
+        Stack object allows you to conduct many things
+        with carrying your data.
+        """
         self._data = None
-    
+
     def __add__(self, other):
+        """To allow object add as adding data inside
+        """
         if isinstance(other, type(self)):
             self._data = self._data + other._data
         else:
             self._data = self._data + other
     
     def __mul__(self, other):
+        """To allow object muliplication as data inside
+        """
         if isinstance(other, type(self)):
             self._data = self._data * other._data
         else:
             self._data = self._data * other
     
     def open(self, path):
-        assert isinstance(path, str), "path need to be string"
+        if not isinstance(path, str):
+            raise ValueError("path need to be string")
         if any(path.split(".")[-1] in s for s in [".tif", ".tiff"]):
             pic = Image.open(path)
             w, h = pic.size
@@ -111,7 +121,7 @@ class Stack:
                 if impulses.data()[i, j, 0] != 0:
                     tmp[:, :, q] = self.data()[i-x_l//2:i+(x_l-x_l//2), j-y_l//2:j+(y_l-y_l//2), 0]
                     q += 1
-        new.data_ = tmp
+        new.data_(tmp)
 
         if flag:
             new.to_numpy_()
@@ -129,7 +139,6 @@ class Stack:
     
     def show(self):
         if isinstance(self._data, torch.Tensor):
-            assert self._data.dim() == 3, "Check dimension of stack, need to be 3"
             thickness = self._data.size(2)
             if thickness == 1:
                 plt.imshow(self._data.permute(1, 0, 2).squeeze(2), cmap='gray')
@@ -141,7 +150,6 @@ class Stack:
                 plt.show()
         elif isinstance(self._data, np.ndarray):
             # TODO need to change x and y
-            assert self._data.ndim == 3, "Check dimension of stack, need to be 3"
             thickness = self._data.shape[2]
             if thickness == 1:
                 plt.imshow(self._data.squeeze(2).T, cmap='gray')

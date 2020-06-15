@@ -13,7 +13,7 @@ def mip_x(self):
         new.data_(tmp)
     else:
         raise ValueError("Check type of stack")
-    
+
     return new
 
 def mip_y(self):

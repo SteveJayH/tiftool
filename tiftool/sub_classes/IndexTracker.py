@@ -1,10 +1,13 @@
 class IndexTracker(object):
     def __init__(self, ax, X):
+        """It is used at "Stack.show()".
+        You can scroll to navigate different z-slices.
+        """
         self.ax = ax
         ax.set_title('use scroll wheel to navigate images')
 
         self.X = X
-        rows, cols, self.slices = X.shape
+        self.slices = X.shape
         self.ind = self.slices//2
 
         self.im = ax.imshow(self.X[:, :, self.ind], cmap='gray')
