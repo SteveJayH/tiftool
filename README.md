@@ -38,6 +38,7 @@ pip install tiftool -U
 ### Basic things using stack object
 
 ```python
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3fb8268c6074ad7ae70cd3478ad04c3)](https://app.codacy.com/manual/jay0118/tiftool?utm_source=github.com&utm_medium=referral&utm_content=SteveJayH/tiftool&utm_campaign=Badge_Grade_Dashboard)
   <div a[![Downloads](https://pepy.tech/badge/tiftool)](https://pepy.tech/project/tiftool)lgin="center"
 </div>
 
