@@ -10,29 +10,32 @@ from .sub_classes.IndexTracker import IndexTracker
 
 class Stack:
     def __init__(self):
-        """self._data will contain data.
-        Stack object works as "Rocket". 
+        """
+        self._data will contain data.
+        Stack object works as "Rocket".
         Stack object allows you to conduct many things
         with carrying your data.
         """
         self._data = None
 
     def __add__(self, other):
-        """To allow object add as adding data inside
+        """
+        To allow object add as adding data inside
         """
         if isinstance(other, type(self)):
             self._data = self._data + other._data
         else:
             self._data = self._data + other
-    
+
     def __mul__(self, other):
-        """To allow object muliplication as data inside
+        """
+        To allow object muliplication as data inside
         """
         if isinstance(other, type(self)):
             self._data = self._data * other._data
         else:
             self._data = self._data * other
-    
+
     def open(self, path):
         if not isinstance(path, str):
             raise ValueError("path need to be string")
@@ -48,14 +51,17 @@ class Stack:
             raise ValueError("Only accept .tif, .tiff files. Check path.")
 
         return self
-    
+
     def data(self):
         return self._data
-    
+
+    """
+    # Deprecated
     def _data(self, data):
         self._data = data
         return self
-    
+    """
+
     def data_(self, data):
         self._data = data
 
@@ -65,14 +71,14 @@ class Stack:
 
     def to_tensor_(self):
         self._data = torch.as_tensor(self._data).float()
-    
+
     def to_numpy(self):
         self._data = self._data.numpy()
         return self
 
     def to_numpy_(self):
         self._data = self._data.numpy()
-    
+
     def mip_3d(self, z_exp=1, padding=10):
         new = copy.deepcopy(self)
 
@@ -80,7 +86,7 @@ class Stack:
         if isinstance(self._data, np.ndarray):
             flag = True
             self.to_tensor_()
-        
+
         def tile(a, dim, n_tile):
             init_dim = a.size(dim)
             repeat_idx = [1] * a.dim()
@@ -88,31 +94,31 @@ class Stack:
             a = a.repeat(*(repeat_idx))
             order_index = torch.LongTensor(np.concatenate([init_dim * np.arange(n_tile) + i for i in range(init_dim)]))
             return torch.index_select(a, dim, order_index)
-        
+    
         x = self._data.size(0) + padding + self._data.size(2) * z_exp
         y = self._data.size(1) + padding + self._data.size(2) * z_exp
         tmp = torch.zeros(x, y, 1)
-        
+
         tmp.fill_(self._data.max())
 
         tmp[0:self._data.size(0), 0:self._data.size(1), :] = mip_z(self).data()
         tmp[0:self._data.size(0), self._data.size(1)+padding:tmp.size(1), :] = tile(mip_x(self).data().squeeze(2), 1, z_exp).unsqueeze(2)
         tmp[self._data.size(0)+padding:tmp.size(0), 0:self._data.size(1), :] = tile(mip_y(self).data().squeeze(2), 0, z_exp).unsqueeze(2)
-        
+
         new.data_(tmp)
-        
+
         if flag:
             new.to_numpy_()
-        
+
         return new
-    
+
     def xlfm_encoding(self, impulses, x_l, y_l, z_l):
         new = copy.deepcopy(self)
         flag = False
         if isinstance(self._data, np.ndarray):
             flag = True
             self.to_tensor_()
-        
+
         tmp = torch.zeros(x_l, y_l, z_l)
         q = 0
 
@@ -136,7 +142,7 @@ class Stack:
             # TODO permute???
         else:
             raise ValueError("Check type of stack")
-    
+
     def show(self):
         if isinstance(self._data, torch.Tensor):
             thickness = self._data.size(2)

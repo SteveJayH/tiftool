@@ -26,7 +26,7 @@ def mip_y(self):
         new.data_(tmp)
     else:
         raise ValueError("Check type of stack")
-    
+
     return new
 
 def mip_z(self):
@@ -39,5 +39,5 @@ def mip_z(self):
         new.data_(tmp)
     else:
         raise ValueError("Check type of stack")
-    
+
     return new

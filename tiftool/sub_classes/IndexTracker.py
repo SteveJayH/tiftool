@@ -1,6 +1,7 @@
 class IndexTracker(object):
     def __init__(self, ax, X):
-        """It is used at "Stack.show()".
+        """
+        It is used at "Stack.show()".
         You can scroll to navigate different z-slices.
         """
         self.ax = ax
