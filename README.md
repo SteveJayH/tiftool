@@ -4,6 +4,7 @@
 
 The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.08.**
 
+
 <div align="center">
     <a href="https://pypi.org/project/tiftool/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/tiftool?color=blue">
@@ -38,10 +39,6 @@ pip install tiftool -U
 ### Basic things using stack object
 
 ```python
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3fb8268c6074ad7ae70cd3478ad04c3)](https://app.codacy.com/manual/jay0118/tiftool?utm_source=github.com&utm_medium=referral&utm_content=SteveJayH/tiftool&utm_campaign=Badge_Grade_Dashboard)
-  <div a[![Downloads](https://pepy.tech/badge/tiftool)](https://pepy.tech/project/tiftool)lgin="center"
-</div>
-
 import tiftool.stack as st
 
 larva = st.Stack().open("larva.tif").to_tensor()  # Change to torch.tensor, default data is numpy array.
