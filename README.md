@@ -4,7 +4,7 @@
 
 The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.08.**
 
-<div algin="center">
+<div align="center">
     <a href="https://pypi.org/project/tiftool/">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/tiftool?color=blue">
     </a>
