@@ -56,7 +56,7 @@ class Stack:
         return self._data
 
     """
-    # Deprecated
+    **Deprecated**
     def _data(self, data):
         self._data = data
         return self
@@ -94,7 +94,7 @@ class Stack:
             a = a.repeat(*(repeat_idx))
             order_index = torch.LongTensor(np.concatenate([init_dim * np.arange(n_tile) + i for i in range(init_dim)]))
             return torch.index_select(a, dim, order_index)
-    
+
         x = self._data.size(0) + padding + self._data.size(2) * z_exp
         y = self._data.size(1) + padding + self._data.size(2) * z_exp
         tmp = torch.zeros(x, y, 1)
