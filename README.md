@@ -2,7 +2,17 @@
 
 <h2 align="center">tiftool: A Python package for Microscopy tif images</h2>
 
-The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.07.**
+The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.08.**
+
+## Concept
+
+### Stack object
+
+Main concept of tiftool is **Stack object**. This object carries your 3d data from .tif file as 'torch.Tensor' or 'numpy.ndarray'. By using stack object, you can conduct numerous processes; MIP(Maximum Intensity Projection), Find center z-plane, etc. This package is made to help research, Fluorescent Microscopy(WideField, XLFM(eXtended field of view LFM), etc).
+
+### HyperStack object
+
+**Under construction** Similar as ImageJ, I'll make HyperStack object which can consider 'time'. It will contain 4-D data, (T, X, Y, Z).
 
 ## Installation
 
@@ -28,7 +38,7 @@ larva = st.Stack().open("larva.tif").to_tensor()  # Change to torch.tensor, defa
 raw_data = larva._data  # You can access the raw data inside Stack() object.
 print(raw_data.size())  # torch.size([1098, 890, 64]) (x, y, z)
 
-MIP = a.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
+MIP = larva.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
 MIP.show()  # Show image using matplotlib
 MIP.write("mip_larva.tif")  # write at your input path
 ```
