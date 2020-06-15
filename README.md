@@ -4,6 +4,12 @@
 
 The package for dealing tif stack image. Oriented for Microscopy image, offering useful processing. **Under construction, I'll make description site and more functions, maybe for 2020.08.**
 
+<div align="center">
+    <a href="https://pypi.org/project/tiftool/">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/tiftool?color=blue">
+    </a>
+</div>
+
 ## Concept
 
 ### Stack object
@@ -19,11 +25,11 @@ Main concept of tiftool is **Stack object**. This object carries your 3d data fr
 ### pip
 
 tiftool can installed via pip. Simply run this code by terminal.
-```
+```bash
 pip install tiftool
 ```
 Latest version is **0.1.5**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
-```
+```bash
 pip install tiftool -U
 ```
 
@@ -32,6 +38,9 @@ pip install tiftool -U
 ### Basic things using stack object
 
 ```python
+  <div a[![Downloads](https://pepy.tech/badge/tiftool)](https://pepy.tech/project/tiftool)lgin="center"
+</div>
+
 import tiftool.stack as st
 
 larva = st.Stack().open("larva.tif").to_tensor()  # Change to torch.tensor, default data is numpy array.
