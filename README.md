@@ -25,11 +25,11 @@ Main concept of tiftool is **Stack object**. This object carries your 3d data fr
 ### pip
 
 tiftool can installed via pip. Simply run this code by terminal.
-```
+```bash
 pip install tiftool
 ```
 Latest version is **0.1.5**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
-```
+```bash
 pip install tiftool -U
 ```
 
