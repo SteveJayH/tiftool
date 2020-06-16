@@ -28,10 +28,15 @@ tiftool can installed via pip. Simply run this code by terminal.
 ```bash
 pip install tiftool
 ```
-Latest version is **0.1.5**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
+Latest version is **0.2.1**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
 ```bash
 pip install tiftool -U
 ```
+***not recommended*** If you want to force ignore all dependencies, you can use --no-dependencies switch of pip [stackoverflow](https://stackoverflow.com/questions/12759761/python-pip-force-install-ignoring-dependencies).
+```bash
+pip install --no-dependencies tiftool
+```
+tiftool might not work well if your environment doesn't have requirements...
 
 ### wheel
 
