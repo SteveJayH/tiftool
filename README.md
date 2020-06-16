@@ -60,7 +60,7 @@ MIP = larva.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
 MIP.show()  # Show image using matplotlib
 MIP.write("mip_larva.tif")  # write at your input path
 ```
-See [tiftool docs](https://stevejayh.github.io/tiftool/){: target="_blank"} for more details.  (**Not constructed**)
+See [tiftool docs](https://stevejayh.github.io/tiftool/) for more details.  (**Not constructed**)
 
 ## Issues & Contribution
 
