@@ -1,4 +1,4 @@
-<div align="center"><img src="https://github.com/SteveJayH/tiftool/blob/master/images/bannertiftoo.png" height="150px"/></div>
+<div align="center"><img src="images/bannertiftoo.png" height="150px"/></div>
 
 <h2 align="center">tiftool: A Python package for Microscopy tif images</h2>
 
