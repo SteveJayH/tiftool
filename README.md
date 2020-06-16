@@ -33,6 +33,13 @@ Latest version is **0.1.5**. If you have older version of tiftool, run this code
 pip install tiftool -U
 ```
 
+### wheel
+
+If upper method does not work, you can install tiftool via wheel(.whl) file. Install wheel from this [.whl](https://files.pythonhosted.org/packages/c9/6d/d8650651863d369bdf1e66b6d77b3ba8974ae30e93638d7c2457f7563f7c/tiftool-0.2.1-py3-none-any.whl) link.
+```bash
+pip install yourpath/...whl
+```
+
 ## Running tiftool
 
 ### Basic things using stack object
