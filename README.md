@@ -14,7 +14,7 @@ The package for dealing tif stack image. Oriented for Microscopy image, offering
 
 ### Stack object
 
-Main concept of tiftool is **Stack object**. This object carries your 3d data from .tif file as 'torch.Tensor' or 'numpy.ndarray'. By using stack object, you can conduct numerous processes; MIP(Maximum Intensity Projection), Find center z-plane, etc. This package is made to help research, Fluorescent Microscopy(WideField, XLFM(eXtended field of view LFM), etc).
+Main concept of tiftool is **Stack object**. This object is a :rocket:, carries your 3d data from .tif file as 'torch.Tensor' or 'numpy.ndarray'. By using stack object, you can conduct numerous processes; MIP(Maximum Intensity Projection), Find center z-plane, etc. This package is made to help research, Fluorescent Microscopy(WideField, XLFM(eXtended field of view LFM), etc).
 
 ### HyperStack object
 
@@ -28,9 +28,21 @@ tiftool can installed via pip. Simply run this code by terminal.
 ```bash
 pip install tiftool
 ```
-Latest version is **0.1.5**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
+Latest version is **0.2.1**. If you have older version of tiftool, run this code to update. I strongly recommend to use latest version.
 ```bash
 pip install tiftool -U
+```
+***not recommended*** If you want to force ignore all dependencies, you can use --no-dependencies switch of pip [stackoverflow](https://stackoverflow.com/questions/12759761/python-pip-force-install-ignoring-dependencies).
+```bash
+pip install --no-dependencies tiftool
+```
+tiftool might not work well if your environment doesn't have requirements...
+
+### wheel
+
+If upper method does not work, you can install tiftool via wheel(.whl) file. Install wheel from this [.whl](https://files.pythonhosted.org/packages/c9/6d/d8650651863d369bdf1e66b6d77b3ba8974ae30e93638d7c2457f7563f7c/tiftool-0.2.1-py3-none-any.whl) link.
+```bash
+pip install yourpath/...whl
 ```
 
 ## Running tiftool
@@ -48,7 +60,7 @@ MIP = larva.mip_3d()  # Return Maximum Intensity Project for x, y, z axis
 MIP.show()  # Show image using matplotlib
 MIP.write("mip_larva.tif")  # write at your input path
 ```
-See [tiftool docs](https://github.com/SteveJayH/tiftool/) for more details.  (**Not constructed**)
+See [tiftool docs](https://stevejayh.github.io/tiftool/) for more details.  (**Not constructed**)
 
 ## Issues & Contribution
 
