@@ -134,11 +134,11 @@ class Stack:
 
         return new
 
-    def write(self, path):
+    def write(self, path, imagej=False):
         if isinstance(self._data, torch.Tensor):
-            imwrite(path, self._data.permute(2, 1, 0).cpu().numpy(), dtype='f2')
+            imwrite(path, self._data.permute(2, 1, 0).cpu().numpy(), dtype='f2', imagej=imagej)
         elif isinstance(self._data, np.ndarray):
-            imwrite(path, np.transpose(self._data.astype('float32'), [2, 1, 0]), dtype='f2')
+            imwrite(path, np.transpose(self._data.astype('float32'), [2, 1, 0]), dtype='f2', imagej=imagej)
             # TODO permute???
         else:
             raise ValueError("Check type of stack")

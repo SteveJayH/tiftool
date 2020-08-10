@@ -9,16 +9,16 @@ class IndexTracker(object):
 
         self.X = X
         self.slices = X.shape
-        self.ind = self.slices//2
+        self.ind = self.slices[2]//2
 
         self.im = ax.imshow(self.X[:, :, self.ind], cmap='gray')
         self.update()
 
     def onscroll(self, event):
         if event.button == 'up':
-            self.ind = (self.ind + 1) % self.slices
+            self.ind = (self.ind + 1) % self.slices[2]
         else:
-            self.ind = (self.ind - 1) % self.slices
+            self.ind = (self.ind - 1) % self.slices[2]
         self.update()
 
     def update(self):
